@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 @MainActor
 final class MovieDetailPresenter: ObservableObject, MovieDetailPresenterProtocol {

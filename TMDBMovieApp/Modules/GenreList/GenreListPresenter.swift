@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 /// GenreList Presenter — acts as the middleman between View and Interactor.
 /// Holds all UI state as `@Published` properties observed by the View.
