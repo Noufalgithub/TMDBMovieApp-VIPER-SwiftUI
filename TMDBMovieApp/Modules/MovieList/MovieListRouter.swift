@@ -17,7 +17,6 @@ final class MovieListRouter: MovieListRouterProtocol {
     }
     
     static func makeMovieDetailView(for movie: Movie) -> some View {
-        // To be implemented in Phase 3
-        Text("Movie Detail for \(movie.title)")
+        return MovieDetailRouter.createModule(for: movie.id)
     }
 }
