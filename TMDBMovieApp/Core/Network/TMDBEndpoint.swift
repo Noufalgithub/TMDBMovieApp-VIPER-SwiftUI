@@ -9,8 +9,8 @@ import Foundation
 
 /// Configuration for TMDB API credentials and base URL.
 enum TMDBConfig {
-    /// TMDB API Key — Replace with your actual API key
-    static let apiKey = "YOUR_API_KEY_HERE"
+    /// TMDB API Key
+    static let apiKey = "318bd7b164451c099356cf7428b206b5"
 
     /// TMDB API base URL
     static let baseURL = "https://api.themoviedb.org/3"

@@ -28,9 +28,23 @@ struct YouTubePlayerView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let url = URL(string: "https://www.youtube.com/embed/\(videoID)?playsinline=1") else { return }
-        let request = URLRequest(url: url)
-        uiView.load(request)
+        let embedHTML = """
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <style>
+                * { margin: 0; padding: 0; }
+                html, body { width: 100%; height: 100%; background-color: #000000; overflow: hidden; }
+                iframe { width: 100%; height: 100%; border: none; }
+            </style>
+        </head>
+        <body>
+            <iframe src="https://www.youtube.com/embed/\(videoID)?playsinline=1&enablejsapi=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </body>
+        </html>
+        """
+        uiView.loadHTMLString(embedHTML, baseURL: URL(string: "https://www.youtube.com"))
     }
 }
 

@@ -1,0 +1,8 @@
+# Xcode build artifacts
+build/
+DerivedData/
+*.xcworkspace
+!.xcodeproj/project.pbxproj
+
+# macOS
+.DS_Store

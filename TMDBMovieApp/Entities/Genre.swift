@@ -10,14 +10,14 @@ import Foundation
 // MARK: - Genre Response
 
 /// Root response for GET /genre/movie/list
-struct GenreResponse: Decodable, Sendable {
+nonisolated struct GenreResponse: Decodable, Sendable {
     let genres: [Genre]
 }
 
 // MARK: - Genre
 
 /// Represents a single movie genre from TMDB.
-struct Genre: Decodable, Identifiable, Hashable, Sendable {
+nonisolated struct Genre: Decodable, Identifiable, Hashable, Sendable {
     let id: Int
     let name: String
 }

@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Review Response (Paginated)
 
 /// Paginated response for movie reviews.
-struct ReviewResponse: Decodable, Sendable {
+nonisolated struct ReviewResponse: Decodable, Sendable {
     let id: Int
     let page: Int
     let results: [Review]
@@ -31,7 +31,7 @@ struct ReviewResponse: Decodable, Sendable {
 // MARK: - Review
 
 /// Represents a single user review from TMDB.
-struct Review: Decodable, Identifiable, Hashable, Sendable {
+nonisolated struct Review: Decodable, Identifiable, Hashable, Sendable {
     let id: String
     let author: String
     let authorDetails: AuthorDetails?
@@ -71,8 +71,8 @@ struct Review: Decodable, Identifiable, Hashable, Sendable {
 
 // MARK: - Author Details
 
-/// Nested author details within a review.
-struct AuthorDetails: Decodable, Hashable, Sendable {
+/// Details of a review author from TMDB.
+nonisolated struct AuthorDetails: Decodable, Hashable, Sendable {
     let name: String?
     let username: String?
     let avatarPath: String?

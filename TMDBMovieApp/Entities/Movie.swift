@@ -11,7 +11,7 @@ import Foundation
 
 /// Paginated response wrapper for movie lists.
 /// Used by discover, search, and similar list endpoints.
-struct MovieResponse: Decodable, Sendable {
+nonisolated struct MovieResponse: Decodable, Sendable {
     let page: Int
     let results: [Movie]
     let totalPages: Int
@@ -32,7 +32,7 @@ struct MovieResponse: Decodable, Sendable {
 
 /// Represents a single movie from TMDB.
 /// Used in both list (discover) and detail contexts.
-struct Movie: Decodable, Identifiable, Hashable, Sendable {
+nonisolated struct Movie: Decodable, Identifiable, Hashable, Sendable {
     let id: Int
     let title: String
     let originalTitle: String?

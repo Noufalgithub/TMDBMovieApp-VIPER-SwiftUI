@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Video Response
 
 /// Response for GET /movie/{id}/videos
-struct VideoResponse: Decodable, Sendable {
+nonisolated struct VideoResponse: Decodable, Sendable {
     let id: Int
     let results: [Video]
 
@@ -32,8 +32,8 @@ struct VideoResponse: Decodable, Sendable {
 
 // MARK: - Video
 
-/// Represents a single video (trailer, teaser, featurette, etc.) from TMDB.
-struct Video: Decodable, Identifiable, Hashable, Sendable {
+/// Represents a video (trailer, teaser, featurette) for a movie.
+nonisolated struct Video: Decodable, Identifiable, Hashable, Sendable {
     let id: String
     let name: String
     let key: String         // YouTube video ID or Vimeo ID
